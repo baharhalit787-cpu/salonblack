@@ -1,0 +1,650 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080808;
+    color: white;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* NAVBAR */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(8, 8, 8, 0.96);
+    border-bottom: 1px solid #222;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    min-height: 75px;
+    padding: 0 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #ff2f92;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.menu a {
+    color: #ddd;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #ff2f92;
+}
+
+
+/* GENEL */
+
+.bolum {
+    max-width: 1200px;
+    margin: auto;
+    padding: 110px 25px;
+    text-align: center;
+}
+
+.etiket {
+    color: #ff2f92;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+}
+
+h2 {
+    font-size: 42px;
+    margin-bottom: 25px;
+}
+
+.aciklama {
+    color: #aaa;
+    max-width: 650px;
+    margin: 0 auto 50px;
+}
+
+
+/* ANA SAYFA */
+
+.hero {
+    min-height: 720px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 47, 146, 0.17),
+            transparent 48%
+        ),
+        #080808;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.ust-yazi {
+    color: #ff2f92;
+    font-size: 15px;
+    letter-spacing: 7px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 8vw, 95px);
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.hero p:not(.ust-yazi) {
+    color: #aaa;
+    font-size: 18px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.buton {
+    display: inline-block;
+    background: #ff2f92;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.buton:hover {
+    background: #ff63ad;
+    transform: translateY(-3px);
+}
+
+.buton.ikinci {
+    background: transparent;
+    border: 1px solid #ff2f92;
+}
+
+.buton.ikinci:hover {
+    background: #ff2f92;
+}
+
+
+/* HAKKIMIZDA */
+
+.hakkimizda {
+    max-width: 900px;
+}
+
+.hakkimizda h2 {
+    max-width: 750px;
+    margin: 0 auto 35px;
+}
+
+.hakkimizda-yazi {
+    color: #aaa;
+    font-size: 16px;
+}
+
+.hakkimizda-yazi p {
+    margin-bottom: 20px;
+}
+
+.hakkimizda-yazi .son-yazi {
+    color: #ff2f92;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+.hakkimizda-yazi strong {
+    display: block;
+    color: white;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+
+/* HİZMETLER */
+
+.kartlar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.kart {
+    background: #151515;
+    border: 1px solid #242424;
+    padding: 40px 25px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.kart:hover {
+    transform: translateY(-7px);
+    border-color: #ff2f92;
+}
+
+.ikon {
+    color: #ff2f92;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.kart h3 {
+    margin-bottom: 10px;
+}
+
+.kart p {
+    color: #999;
+    font-size: 14px;
+}
+
+
+/* MODELLER */
+
+.modeller {
+    max-width: 1250px;
+}
+
+.model-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.model {
+    min-height: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    border: 1px solid #282828;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,0.95),
+            rgba(0,0,0,0.05)
+        );
+}
+
+.model::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 25%,
+            rgba(255,47,146,0.28),
+            transparent 45%
+        );
+}
+
+.model > div {
+    position: relative;
+    z-index: 2;
+    padding: 30px;
+}
+
+.model span {
+    color: #ff2f92;
+    font-size: 13px;
+}
+
+.model h3 {
+    font-size: 25px;
+    margin: 4px 0;
+}
+
+.model p {
+    color: #aaa;
+    font-size: 13px;
+}
+
+
+/* YORUMLAR */
+
+.yorumlar {
+    max-width: 1250px;
+}
+
+.yorum-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.yorum {
+    background: #151515;
+    border: 1px solid #242424;
+    padding: 30px 22px;
+    border-radius: 5px;
+}
+
+.yildiz {
+    color: #ff2f92;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.yorum p {
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.yorum h4 {
+    color: white;
+}
+
+
+/* RANDEVU */
+
+.randevu {
+    max-width: 750px;
+}
+
+#randevuForm {
+    background: #111;
+    border: 1px solid #242424;
+    padding: 40px;
+    border-radius: 6px;
+    text-align: left;
+    margin-top: 40px;
+}
+
+.form-grup {
+    margin-bottom: 20px;
+}
+
+.form-grup label {
+    display: block;
+    color: #ddd;
+    margin-bottom: 7px;
+    font-size: 14px;
+}
+
+.form-grup input,
+.form-grup select,
+.form-grup textarea {
+    width: 100%;
+    padding: 14px;
+    background: #1b1b1b;
+    border: 1px solid #333;
+    border-radius: 4px;
+    color: white;
+    outline: none;
+    font-family: inherit;
+}
+
+.form-grup input:focus,
+.form-grup select:focus,
+.form-grup textarea:focus {
+    border-color: #ff2f92;
+}
+
+.form-grup textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-satir {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.randevu-buton {
+    width: 100%;
+    border: none;
+    background: #ff2f92;
+    color: white;
+    padding: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.randevu-buton:hover {
+    background: #ff63ad;
+}
+
+
+/* ÇALIŞMA SAATLERİ */
+
+.calisma {
+    background: #111;
+    padding: 100px 25px;
+    text-align: center;
+}
+
+.saatler {
+    max-width: 750px;
+    margin: 40px auto 0;
+}
+
+.saatler div {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-bottom: 1px solid #292929;
+}
+
+.saatler span {
+    color: #ccc;
+}
+
+.saatler b {
+    color: #ff2f92;
+}
+
+.saatler .kapali b {
+    color: #777;
+}
+
+
+/* İLETİŞİM */
+
+.iletisim-kartlar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 50px 0 30px;
+}
+
+.iletisim-kart {
+    background: #151515;
+    border: 1px solid #242424;
+    padding: 30px 20px;
+    border-radius: 5px;
+}
+
+.iletisim-kart > span {
+    display: block;
+    color: #ff2f92;
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.iletisim-kart h3 {
+    margin-bottom: 8px;
+}
+
+.iletisim-kart p,
+.iletisim-kart a {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.iletisim-kart a:hover {
+    color: #ff2f92;
+}
+
+.harita-buton {
+    display: inline-block;
+    padding: 13px 25px;
+    border: 1px solid #ff2f92;
+    color: #ff2f92;
+    font-weight: bold;
+    font-size: 13px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+
+.harita-buton:hover {
+    background: #ff2f92;
+    color: white;
+}
+
+.harita {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 5px;
+    border: 1px solid #292929;
+}
+
+.harita iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+/* SABİT WHATSAPP */
+
+.whatsapp-sabit {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 999;
+
+    background: #ff2f92;
+    color: white;
+
+    padding: 14px 20px;
+    border-radius: 30px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+}
+
+.whatsapp-sabit:hover {
+    background: #ff63ad;
+}
+
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 60px 20px;
+    border-top: 1px solid #222;
+}
+
+footer p {
+    color: #888;
+    margin: 10px 0 20px;
+}
+
+footer small {
+    color: #555;
+}
+
+
+/* TELEFON */
+
+@media (max-width: 900px) {
+
+    .menu {
+        display: none;
+    }
+
+    .kartlar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .model-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .yorum-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .iletisim-kartlar {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: 650px;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        max-width: 260px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    .bolum {
+        padding: 80px 18px;
+    }
+
+    .kartlar,
+    .model-grid,
+    .yorum-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #randevuForm {
+        padding: 25px 18px;
+    }
+
+    .form-satir {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .saatler div {
+        font-size: 14px;
+    }
+
+    .whatsapp-sabit {
+        right: 15px;
+        bottom: 15px;
+    }
+}
